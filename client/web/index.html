@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Demo: How pasby works.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pasby.africa/">
+    <meta property="og:title" content="pasby™  Demo - How pasby works">
+    <meta property="og:description"
+      content= "View how pasby™ works when it's been set up properly for optimal security and user experience. pasby™ makes every action smooth, simple, and recognisable. You use pasby™ in the same way; every time, you can log in securely and efficiently, create new accounts, confirm transactions, and sign documents.">
+    <meta property="og:image"
+      content= "https://pasby.africa/opengraph-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pasby.africa/">
+    <meta property="twitter:title" content="pasby™  Demo - How pasby works">
+    <meta property="twitter:description"
+      content= "View how pasby™ works when it's been set up properly for optimal security and user experience. pasby™ makes every action smooth, simple, and recognisable. You use pasby™ in the same way; every time, you can log in securely and efficiently, create new accounts, confirm transactions, and sign documents.">
+    <meta property="twitter:image"
+      content="https://pasby.africa/opengraph-image.png">
+
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="client">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>pasby™ demo</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+  <script>
+    // window.addEventListener('beforeinstallprompt', function (e) {
+    //     e.preventDefault();
+    //     return false;
+    //   });
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

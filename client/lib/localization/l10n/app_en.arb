@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "@@author": "Finsel DGI",
+  "appTitle": "pasby™  Demo",
+  "@appTitle": {
+    "description": "Name of app."
+  },
+  "lostPage": "This page could not be found.",
+  "toHomePage": "Return to front page",
+  "identification": "identification",
+  "signings": "Signings"
+}

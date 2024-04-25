@@ -1,0 +1,11 @@
+{
+  "app_bar": {
+    "bookHome": "",
+    "login": "",
+    "manage": "",
+    "view": {
+      "title": "",
+      "message": ""
+    }
+  }
+}
