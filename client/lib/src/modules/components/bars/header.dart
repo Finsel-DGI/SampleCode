@@ -1,4 +1,5 @@
 import 'package:client/gen/assets.gen.dart';
+import 'package:client/gen/fonts.gen.dart';
 import 'package:client/src/blocs/routing/names.dart';
 import 'package:client/src/modules/components/custom/def_button.dart';
 import 'package:client/src/modules/extensions/build_ext.dart';
@@ -15,7 +16,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: padAsymmetric(
-        horiz: Responsive.isMobile(context) ? 4.w : 4.w,
+        horiz: Responsive.isMobile(context) ? 4.w : 2.w,
         vert: 2.4.h,
       ),
       child: Row(
@@ -39,6 +40,7 @@ class Header extends StatelessWidget {
             textStyle: appTextStyle(
               size: getProportionateScreenHeight(18),
               color: context.theme.primaryColor,
+              family: FontFamily.libre,
               weight: FontWeight.w400,
             ),
           ),
@@ -58,6 +60,7 @@ class Header extends StatelessWidget {
                   .copyWith(
                     bckColor: context.theme.primaryColor,
                     circular: true,
+                    margin: padNone(),
                   ),
             ),
           )

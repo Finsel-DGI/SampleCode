@@ -15,4 +15,7 @@ class FontFamily {
 
   /// Font family: Inter-Medium
   static const String interMedium = 'Inter-Medium';
+
+  /// Font family: Libre
+  static const String libre = 'Libre';
 }

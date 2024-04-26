@@ -1,7 +1,9 @@
 import 'package:client/src/modules/services/theming/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:labs/labs.dart';
+import 'package:labs_web/labs_web.dart';
 import 'package:sizer/sizer.dart';
 import '../blocs/routing/mechanism.dart';
 import 'package:flutter_translate/flutter_translate.dart';
@@ -38,12 +40,16 @@ class _ApplicationState extends ConsumerState<Application>
               return MaterialApp.router(
                 routerConfig: routing,
                 onGenerateTitle: (context) =>
-                    AppLocalizations.of(context)?.appTitle ?? 'pasby™',
+                    AppLocalizations.of(context)?.appTitle ?? 'pasby™ Demo',
                 supportedLocales: AppLocalizations.supportedLocales,
+                scrollBehavior: CustomScrollBehavior(),
                 scaffoldMessengerKey: globalSnackBarKey,
                 locale: settings.locale ?? localizationDelegate.currentLocale,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,
-                // debugShowCheckedModeBanner: kDebugMode,
+                shortcuts: {
+                  LogicalKeySet(LogicalKeyboardKey.space):
+                      const ActivateIntent(),
+                },
                 debugShowCheckedModeBanner: false,
                 themeMode: settings.themeMode,
                 theme: settings.service.lightMode(),

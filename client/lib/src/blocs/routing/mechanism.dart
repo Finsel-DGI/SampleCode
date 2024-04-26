@@ -2,6 +2,7 @@ import 'package:client/src/blocs/routing/locator.dart';
 import 'package:client/src/blocs/routing/names.dart';
 import 'package:client/src/modules/services/system/navigation_service.dart';
 import 'package:client/src/views/forbidden/not_found.dart';
+import 'package:client/src/views/landing/base.dart';
 import 'package:client/src/views/root/base.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -30,9 +31,30 @@ final router = Provider<GoRouter>((ref) {
             pageBuilder: (context, state) => pageBuilder(
               context,
               state,
-              child: emptyView,
+              child: const StartDemo(),
             ),
           ),
+          // ShellRoute(
+          //   navigatorKey: locator<NavigationService>().flowKey,
+          //   builder: (context, state, child) => builder(
+          //     context,
+          //     state: state,
+          //     child: RootTemplate(
+          //       child: child,
+          //     ),
+          //   ),
+          //   routes: [
+          //     GoRoute(
+          //       name: RouteNames.auth.name,
+          //       path: RouteNames.auth.route,
+          //       pageBuilder: (context, state) => pageBuilder(
+          //         context,
+          //         state,
+          //         child: emptyView,
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     ],

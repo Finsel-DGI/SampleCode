@@ -27,6 +27,9 @@ dependencies:
     git: https://github.com/Finsel-DGI/web_library.git
   get_it: ^7.7.0
   sizer: ^2.0.15
+  riverbloc: ^2.2.0
+  flutter_hooks: ^0.18.6
+  rive: ^0.13.2
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +57,12 @@ flutter:
     - family: Inter-Medium
       fonts:
         - asset: packages/labs_web/fonts/Inter/Inter-Medium.ttf
+    - family: Libre
+      fonts:
+        - asset: packages/labs/fonts/LibreFranklin-VariableFont_wght.ttf
+        - asset: packages/labs/fonts/LibreFranklin-Italic-VariableFont_wght.ttf
+
   assets:
     - assets/i18n/
+    - assets/rive/
     - assets/svg/
