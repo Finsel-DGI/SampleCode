@@ -1,6 +1,6 @@
 import 'package:client/src/modules/res/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:labs/labs.dart';
+import 'package:logistics/logistics.dart';
 import 'package:sizer/sizer.dart';
 
 /// A service that stores and retrieves user settings.
@@ -8,9 +8,8 @@ import 'package:sizer/sizer.dart';
 /// By default, this class does not persist user settings. If you'd like to
 /// persist the user settings locally, use the shared_preferences package. If
 /// you'd like to store settings on a web server, use the http package.
-class SettingsService implements SettingServiceInterface {
+class SettingsService {
   /// Loads the User's preferred ThemeMode from local or remote storage.
-  @override
   Future<ThemeMode> theme() async {
     try {
       String? theme = Prefs.getString('theme');
@@ -42,7 +41,6 @@ class SettingsService implements SettingServiceInterface {
   }
 
   /// Persists the user's preferred ThemeMode to local or remote storage.
-  @override
   Future<void> updateThemeMode(ThemeMode theme) async {
     // Use the shared_preferences package to persist settings locally or the
     // http package to persist settings over the network.
@@ -56,7 +54,6 @@ class SettingsService implements SettingServiceInterface {
   }
 
   /// Loads the Native preferred DarkMode settings.
-  @override
   ThemeData darkMode() {
     return ThemeData(
       useMaterial3: false,
@@ -90,7 +87,6 @@ class SettingsService implements SettingServiceInterface {
     );
   }
 
-  @override
   ThemeData lightMode() {
     return ThemeData(
       useMaterial3: false,

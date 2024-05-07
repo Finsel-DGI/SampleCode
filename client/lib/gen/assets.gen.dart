@@ -10,6 +10,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:rive/rive.dart';
 
 class $AssetsI18nGen {
   const $AssetsI18nGen();
@@ -21,20 +22,48 @@ class $AssetsI18nGen {
   List<String> get values => [en];
 }
 
+class $AssetsRiveGen {
+  const $AssetsRiveGen();
+
+  /// File path: assets/rive/offer_pasby.riv
+  RiveGenImage get offerPasby =>
+      const RiveGenImage('assets/rive/offer_pasby.riv');
+
+  /// List of all assets
+  List<RiveGenImage> get values => [offerPasby];
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
+
+  /// File path: assets/svg/confirm.svg
+  SvgGenImage get confirm => const SvgGenImage('assets/svg/confirm.svg');
+
+  /// File path: assets/svg/github.svg
+  SvgGenImage get github => const SvgGenImage('assets/svg/github.svg');
+
+  /// File path: assets/svg/login.svg
+  SvgGenImage get login => const SvgGenImage('assets/svg/login.svg');
 
   /// File path: assets/svg/pasby.svg
   SvgGenImage get pasby => const SvgGenImage('assets/svg/pasby.svg');
 
+  /// File path: assets/svg/sign.svg
+  SvgGenImage get sign => const SvgGenImage('assets/svg/sign.svg');
+
+  /// File path: assets/svg/use-pasby.svg
+  SvgGenImage get usePasby => const SvgGenImage('assets/svg/use-pasby.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [pasby];
+  List<SvgGenImage> get values =>
+      [confirm, github, login, pasby, sign, usePasby];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsI18nGen i18n = $AssetsI18nGen();
+  static const $AssetsRiveGen rive = $AssetsRiveGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
@@ -82,6 +111,41 @@ class SvgGenImage {
       colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class RiveGenImage {
+  const RiveGenImage(this._assetName);
+
+  final String _assetName;
+
+  RiveAnimation rive({
+    String? artboard,
+    List<String> animations = const [],
+    List<String> stateMachines = const [],
+    BoxFit? fit,
+    Alignment? alignment,
+    Widget? placeHolder,
+    bool antialiasing = true,
+    List<RiveAnimationController> controllers = const [],
+    OnInitCallback? onInit,
+  }) {
+    return RiveAnimation.asset(
+      _assetName,
+      artboard: artboard,
+      animations: animations,
+      stateMachines: stateMachines,
+      fit: fit,
+      alignment: alignment,
+      placeHolder: placeHolder,
+      antialiasing: antialiasing,
+      controllers: controllers,
+      onInit: onInit,
     );
   }
 

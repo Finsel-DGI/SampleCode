@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   final GlobalKey<NavigatorState> rootKey = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> flowKey = GlobalKey<NavigatorState>();
 
   Future<dynamic> determineNavMethod(String routeName, {Object? argument, bool replace = false}) {
     if(replace){

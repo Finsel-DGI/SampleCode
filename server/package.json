@@ -1,0 +1,63 @@
+{
+  "name": "pasby-demo-server",
+  "version": "0.1.0",
+  "description": "This server is part of the pasby demo",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node -r dotenv/config build/index.js",
+    "lint": "eslint --ext .js,.ts .",
+    "linty": "npm run lint -- --fix",
+    "dev": "nodemon --exec \"npx tsc && node -r dotenv/config build/index.js\" | npx pino-pretty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Finsel-DGI/SampleCode.git#main"
+  },
+  "keywords": [
+    "pasby",
+    "identification",
+    "pasby",
+    "demo",
+    "authentication",
+    "africa"
+  ],
+  "author": "Finsel DGI Limited",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "bugs": {
+    "url": "https://github.com/Finsel-DGI/SampleCode/issues"
+  },
+  "homepage": "https://github.com/Finsel-DGI/SampleCode/tree/main#readme",
+  "dependencies": {
+    "@finsel-dgi/pasby": "^0.0.4",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.12.0",
+    "express": "^4.18.2",
+    "labs-sharable": "^1.6.4",
+    "pino": "^8.17.2",
+    "pino-http": "^9.0.0",
+    "pino-pretty": "^10.3.1",
+    "serve-favicon": "^2.5.0",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.7",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.8",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.6.3"
+  },
+  "engines": {
+    "node": "19.5.0"
+  }
+}

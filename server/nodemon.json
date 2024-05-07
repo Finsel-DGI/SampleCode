@@ -1,0 +1,8 @@
+{
+  "signal": "SIGTERM",
+  "watch": [
+    "server"
+  ],
+  "ext": "ts",
+  "exec": "ts-node server/app.ts"
+}

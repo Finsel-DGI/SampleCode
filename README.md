@@ -9,6 +9,8 @@ Onboard real, verified national identities, let them login without a password an
 
 To help you integrate pasby in a correct, secure and user-friendly way, we have created a demo site, where you can test the digital identification flow and the digital signature flow.
 
+<img src="screenshot/github_demo.png" />
+
 [Visit the demo site](https://demo.pasby.africa)
 
 

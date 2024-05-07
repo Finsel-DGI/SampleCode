@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:labs/labs.dart';
-
 import 'settings.dart';
 
 /// A class that many Widgets can interact with to read user settings, update
@@ -9,7 +7,7 @@ import 'settings.dart';
 ///
 /// Controllers glue Data Services to Flutter Widgets. The SettingsController
 /// uses the SettingsService to store and retrieve user settings.
-class SettingsController with ChangeNotifier  implements AppSettingsInterface {
+class SettingsController with ChangeNotifier {
 
   SettingsController();
 
@@ -23,15 +21,12 @@ class SettingsController with ChangeNotifier  implements AppSettingsInterface {
   Locale? get locale => _locale;
 
   // Allow Widgets to read the user's preferred ThemeMode.
-  @override
   ThemeMode get themeMode => _themeMode;
-  @override
   SettingsService get service => _settingsService;
 
   /// Load the user's settings from the SettingsService. It may load from a
   /// local database or the internet. The controller only knows it can load the
   /// settings from the service.
-  @override
   Future<void> loadSettings() async {
     _locale = await _settingsService.locale();
     _themeMode = await _settingsService.theme();
@@ -40,7 +35,6 @@ class SettingsController with ChangeNotifier  implements AppSettingsInterface {
   }
 
   /// Update and persist the ThemeMode based on the user's selection.
-  @override
   Future<void> updateThemeMode(ThemeMode? newThemeMode) async {
     if (newThemeMode == null) return;
 

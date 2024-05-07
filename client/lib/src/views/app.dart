@@ -1,7 +1,9 @@
+import 'package:client/src/blocs/session/mixin/shared_state.dart';
 import 'package:client/src/modules/services/theming/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:labs/labs.dart';
+import 'package:logistics/logistics.dart';
 import 'package:sizer/sizer.dart';
 import '../blocs/routing/mechanism.dart';
 import 'package:flutter_translate/flutter_translate.dart';
@@ -15,7 +17,7 @@ class Application extends ConsumerStatefulWidget {
 }
 
 class _ApplicationState extends ConsumerState<Application>
-    with WidgetsBindingObserver {
+    with WidgetsBindingObserver, AppSharedState {
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(this);
@@ -38,12 +40,16 @@ class _ApplicationState extends ConsumerState<Application>
               return MaterialApp.router(
                 routerConfig: routing,
                 onGenerateTitle: (context) =>
-                    AppLocalizations.of(context)?.appTitle ?? 'pasby™',
+                    AppLocalizations.of(context)?.appTitle ?? 'pasby™ Demo',
                 supportedLocales: AppLocalizations.supportedLocales,
-                scaffoldMessengerKey: globalSnackBarKey,
+                scrollBehavior: CustomScrollBehavior(),
+                scaffoldMessengerKey: scaffoldKey,
                 locale: settings.locale ?? localizationDelegate.currentLocale,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,
-                // debugShowCheckedModeBanner: kDebugMode,
+                shortcuts: {
+                  LogicalKeySet(LogicalKeyboardKey.space):
+                      const ActivateIntent(),
+                },
                 debugShowCheckedModeBanner: false,
                 themeMode: settings.themeMode,
                 theme: settings.service.lightMode(),
