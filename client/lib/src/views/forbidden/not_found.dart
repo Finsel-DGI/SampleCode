@@ -1,7 +1,6 @@
 import 'package:client/src/modules/extensions/build_ext.dart';
 import 'package:flutter/material.dart';
-import 'package:labs/labs.dart';
-import 'package:labs_web/labs_web.dart';
+import 'package:logistics/logistics.dart';
 
 class ForbiddenRoute extends StatelessWidget {
   const ForbiddenRoute({super.key});

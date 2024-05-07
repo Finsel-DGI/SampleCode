@@ -5,7 +5,7 @@ This is the frontend part of this pasby demo. Here we provide an example of how 
 
 ## Wildcard start
 
-> To protect users and businesses, Wildcard start will be mandatory from 1st of October 2024.
+> To protect users and businesses, Wildcard start will be mandatory as well the introduction of restricted scopes from 1st of October 2024.  
 > 
 > It eliminates the need for your user to write in their nins before authenticating. 
 > 

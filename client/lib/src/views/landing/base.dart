@@ -1,14 +1,15 @@
+import 'package:client/gen/assets.gen.dart';
 import 'package:client/gen/fonts.gen.dart';
 import 'package:client/src/modules/components/custom/pasby_button.dart';
 import 'package:client/src/modules/enums/default.dart';
 import 'package:client/src/modules/extensions/build_ext.dart';
-import 'package:client/src/views/landing/components/source_code.dart';
+import 'package:client/src/views/flow/bloc/flow_event.dart';
+import 'package:client/src/views/landing/component/source_code.dart';
 import 'package:flutter/material.dart';
-import 'package:labs/labs.dart';
-import 'package:labs_web/labs_web.dart';
+import 'package:logistics/logistics.dart';
 import 'package:sizer/sizer.dart';
 
-class StartDemo extends StatelessWidget {
+class StartDemo extends StatelessWidget with FlowEvents {
   const StartDemo({super.key});
 
   @override
@@ -22,6 +23,24 @@ class StartDemo extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        if (Responsive.isMobile(context)) ...[
+          Container(
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: 400,
+            margin: padAsymmetric(
+              horiz: 20,
+              vert: 2.8.h,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.grey.withAlpha(40),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Assets.rive.offerPasby.rive(
+              fit: BoxFit.cover,
+            ),
+          )
+        ],
         TitleAndSubtitle(
           margin: padNone(),
           title: context.localizedText!.home("title"),
@@ -38,20 +57,20 @@ class StartDemo extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
-        PasbyButton(
+        PasbyButton<void>(
           action: PasbyAction.login,
           callback: () async {
-            // await delayed();
-            
-            /// todo nav to identification shell and in shell determine if you use qr code or same device
+            matchAuthFlow(context);
           },
           margin: EdgeInsets.only(top: 4.8.h),
         ),
-        // PasbyButton(
-        //   action: PasbyAction.sign,
-        //   callback: () async {},
-        //   margin: EdgeInsets.only(top: 4.8.h),
-        // ),
+        PasbyButton<void>(
+          action: PasbyAction.confirm,
+          callback: () async {
+            matchConfirmationFlow(context);
+          },
+          margin: EdgeInsets.only(top: 4.8.h),
+        ),
         ViewSourceCode(
           margin: EdgeInsets.only(top: 4.8.h),
         ),

@@ -1,7 +1,8 @@
+import 'package:anydrawer/anydrawer.dart';
+import 'package:client/src/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:labs/labs.dart';
-import 'package:labs_web/labs_web.dart';
+import 'package:logistics/logistics.dart';
 
 extension Ext on BuildContext {
   AppLocalizations? get localizedText {
@@ -28,7 +29,7 @@ extension Ext on BuildContext {
       style: appTextStyle(
         size: textSize,
         variation: weight ?? 740,
-        color: textColor ?? theme.colorScheme.background,
+        color: textColor ?? Colors.black,
       ),
       link: link,
       bckColor: theme.buttonTheme.colorScheme?.background,
@@ -42,6 +43,30 @@ extension Ext on BuildContext {
       borderColor: inactive
           ? Colors.transparent
           : theme.buttonTheme.colorScheme?.background,
+    );
+  }
+
+  void showDrawer(
+      {required Widget Function(BuildContext) builder,
+      AnyDrawerController? controller,
+      VoidCallback? onOpen,
+      VoidCallback? onClose,
+      DrawerSide side = DrawerSide.right,
+      bool closeOnClickOutside = true,
+      bool dragEnabled = true,
+      double? widthPercentage,
+      double? borderRadius}) {
+    return DrawerBuild.show(
+      this,
+      builder: builder,
+      borderRadius: borderRadius,
+      controller: controller,
+      onOpen: onOpen,
+      dragEnabled: dragEnabled,
+      onClose: onClose,
+      side: side,
+      widthPercentage: widthPercentage,
+      closeOnClickOutside: closeOnClickOutside,
     );
   }
 }

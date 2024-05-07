@@ -1,6 +1,6 @@
-import 'package:client/src/views/root/components/cta.dart';
+import 'package:client/src/views/root/component/cta.dart';
 import 'package:flutter/material.dart';
-import 'package:labs/labs.dart';
+import 'package:logistics/logistics.dart';
 
 class ScreenRight extends StatelessWidget {
   const ScreenRight({super.key});

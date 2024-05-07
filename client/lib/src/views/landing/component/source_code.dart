@@ -2,8 +2,7 @@ import 'package:client/gen/assets.gen.dart';
 import 'package:client/src/modules/components/custom/def_button.dart';
 import 'package:client/src/modules/extensions/build_ext.dart';
 import 'package:flutter/material.dart';
-import 'package:labs/labs.dart';
-import 'package:labs_web/labs_web.dart';
+import 'package:logistics/logistics.dart';
 
 class ViewSourceCode extends StatelessWidget {
   const ViewSourceCode({super.key, this.margin});
@@ -27,7 +26,7 @@ class ViewSourceCode extends StatelessWidget {
               ),
             ),
             callback: () async {
-              await UrlService().launchURL(
+              await UrlService.launchURL(
                 "https://github.com/Finsel-DGI/SampleCode",
                 browser: true
               );

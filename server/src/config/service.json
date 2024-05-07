@@ -1,0 +1,12 @@
+{
+    "type": "app",
+    "appid": "app_",
+    "consumer": "bcn_",
+    "secret": "prd_",
+    "privatekey": "[change-to-yours]",
+    "publickey": "[change-to-yours]",
+    "apikeys": {
+        "live": "bk-live_",
+        "test": "bk-test_"
+    }
+}

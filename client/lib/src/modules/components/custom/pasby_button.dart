@@ -1,10 +1,10 @@
-import 'package:client/gen/assets.gen.dart';
 import 'package:client/src/modules/components/custom/def_button.dart';
 import 'package:client/src/modules/enums/default.dart';
 import 'package:client/src/modules/extensions/build_ext.dart';
+import 'package:client/src/modules/extensions/pasby_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:labs/labs.dart';
+import 'package:logistics/logistics.dart';
 
 class PasbyButton<T> extends HookWidget {
   const PasbyButton({
@@ -22,8 +22,6 @@ class PasbyButton<T> extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    var asset = action == PasbyAction.sign ? Assets.svg.sign : Assets.svg.login;
-
     var busy = useState(false);
 
     return ConsoleButton(
@@ -31,7 +29,7 @@ class PasbyButton<T> extends HookWidget {
           .buttonArg(
             width: 252,
             height: 56,
-            child: GreyScale(grey: inactive, child: asset.svg()),
+            child: GreyScale(grey: inactive, child: action.button.svg()),
             callback: () async {
               busy.value = true;
               await callback();

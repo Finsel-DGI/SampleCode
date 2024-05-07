@@ -3,8 +3,7 @@ import 'package:client/gen/fonts.gen.dart';
 import 'package:client/src/modules/components/custom/def_button.dart';
 import 'package:client/src/modules/extensions/build_ext.dart';
 import 'package:flutter/material.dart';
-import 'package:labs/labs.dart';
-import 'package:labs_web/labs_web.dart';
+import 'package:logistics/logistics.dart';
 import 'package:rive/rive.dart';
 import 'package:sizer/sizer.dart';
 
@@ -85,13 +84,13 @@ class _CTAViewState extends State<CTAView> {
         ),
         TitleAndSubtitle(
           title: context.localizedText!.cta("title"),
-          // subtitle: context.localizedText!.cta("sub"),
           margin: padAsymmetric(horiz: 12, vert: 1.4.h),
           titleMaxLines: 2,
           titleStyle: appTextStyle(
-            size: getProportionateScreenHeight(20.4),
+            size: getProportionateScreenHeight(18.4),
             color: Colors.white,
             weight: FontWeight.w800,
+            family: FontFamily.libre,
           ),
           alignment: CrossAxisAlignment.center,
           textAlign: TextAlign.center,
@@ -108,10 +107,11 @@ class _CTAViewState extends State<CTAView> {
               .buttonArg(
                 text: context.localizedText!.cta("action"),
                 callback: () async {
-                  await UrlService().launchURL(
+                  await UrlService.launchURL(
                       'https://www.pasby.africa/integrate-pasby',
                       browser: true);
                 },
+                textColor: Colors.white
               )
               .copyWith(
                 width: 280,

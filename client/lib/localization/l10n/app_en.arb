@@ -11,8 +11,20 @@
       "value": {}
     }
   },
-  "home": "{value, select, title{Demo: How pasby works} sub{View how pasby works when it's been set up properly for optimal security and user experience. pasby can be used for identification and digital signatures. Select from the identification button below to begin your investigations. In the demo you use your normal pasby™.} other{...}}",
+  "home": "{value, select, title{Demo: How pasby works} sub{View how pasby works when it's been set up properly for optimal security and user experience. pasby can be used for identification and digital signatures. Select from the buttons below which flow you'd like to investigate immediately. In the demo you use your normal pasby™.} other{...}}",
   "@home": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "success": "{value, select, name{Name:} nin{Identification number:} signed{Signed:} other{...}}",
+  "@success": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "drawer": "{value, select, identification{Text for identification} signature{Text for signature} other{...}}",
+  "@drawer": {
     "placeholders": {
       "value": {}
     }
@@ -22,15 +34,21 @@
     "placeholders": {
       "value": {}
     }
-  },  
-  "errors": "{value, select, scan{The scan failed. Start the pasby™-app and scan the QR code. Check that the pasby™-app is up to date. If you don't have the pasby™-app, you need to install it and get a pasby™ from an accredited vendor or create it yourself with your passport. Install the app from your app store or https://f.pasby.africa/get-app.} other{...}}",
+  },
+  "errors": "{value, select, flow{Start the pasby™-app and perform the instructions seen on the demo app screen. Check that the pasby™-app is up to date. If you don't have the pasby™-app, you need to install it and get a pasby™ from an accredited vendor or create it yourself with your passport. Install the app from your app store or https://f.pasby.africa/get-app.} other{...}}",
   "@errors": {
     "placeholders": {
       "value": {}
     }
   },
-  "pasby": "{value, select, auth{Identify with pasby™} sign{Sign with pasby™} start{Start the pasby™-app and scan the QR code.} other{...}}",
+  "pasby": "{value, select, identification{Identify with pasby} signing{Sign with pasby} scan{Start the pasby™-app and scan the QR code.} auto{Please click the button below to start your pasby™-app} other{...}}",
   "@pasby": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "session": "{value, select, confirm{Enter your security code in the pasby™-app and select confirm.} other{...}}",
+  "@session": {
     "placeholders": {
       "value": {}
     }
@@ -39,6 +57,10 @@
   "repo": "See the code on Github",
   "lostPage": "This page could not be found.",
   "toHomePage": "Return to front page",
-  "identification": "identification",
-  "signings": "Signings"
+  "identification": "Identification",
+  "retry": "Try again",
+  "again": "Try another flow",
+  "open": "Open pasby™",
+  "signings": "Signings",
+  "cancel": "Cancel"
 }

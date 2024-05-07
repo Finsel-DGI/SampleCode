@@ -36,6 +36,9 @@ class $AssetsRiveGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/confirm.svg
+  SvgGenImage get confirm => const SvgGenImage('assets/svg/confirm.svg');
+
   /// File path: assets/svg/github.svg
   SvgGenImage get github => const SvgGenImage('assets/svg/github.svg');
 
@@ -52,7 +55,8 @@ class $AssetsSvgGen {
   SvgGenImage get usePasby => const SvgGenImage('assets/svg/use-pasby.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [github, login, pasby, sign, usePasby];
+  List<SvgGenImage> get values =>
+      [confirm, github, login, pasby, sign, usePasby];
 }
 
 class Assets {

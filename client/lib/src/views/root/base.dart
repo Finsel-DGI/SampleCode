@@ -1,9 +1,9 @@
+import 'package:client/src/modules/components/bars/footer.dart';
 import 'package:client/src/modules/components/bars/header.dart';
 import 'package:client/src/modules/extensions/build_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:labs/labs.dart';
-import 'package:labs_web/labs_web.dart';
+import 'package:logistics/logistics.dart';
 import 'package:sizer/sizer.dart';
 
 import 'right.dart';
@@ -32,7 +32,7 @@ class _RootTemplateState extends StatefulDefaultWrapState<RootTemplate>
             Flexible(
               flex: 8,
               child: Scaffold(
-                appBar: const WidgetAppBar(toolBarHeight: 100, child: Header()),
+                appBar: WidgetAppBar(toolBarHeight: 100, child: Header()),
                 body: ListView(
                   padding: padAsymmetric(horiz: 4.w, vert: 4.8.h),
                   children: [
@@ -58,8 +58,8 @@ class _RootTemplateState extends StatefulDefaultWrapState<RootTemplate>
     return context.localizedText!.appTitle;
   }
 
-  // @override
-  // Widget? bottomBar() {
-  //   return const Footer();
-  // }
+  @override
+  Widget? bottomBar() {
+    return const Footer();
+  }
 }
